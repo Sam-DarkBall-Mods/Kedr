@@ -2,26 +2,25 @@
 
 [![CI](https://github.com/Sam-DarkBall-Mods/Kedr/actions/workflows/ci.yml/badge.svg)](https://github.com/Sam-DarkBall-Mods/Kedr/actions/workflows/ci.yml)
 
-Kedr weapon systems for Arma 3.
+Kedr is a shoulder fired anti-UAV launcher. It has its own missile, magazine,
+infrared seeker settings, lock sounds and supply box.
 
 ## Requirements
 
 - Arma 3 2.22 or newer
-- Additional runtime dependencies declared by `CfgPatches`
 
-## Development
+## Building
 
 ```bash
+python3 -B -m unittest discover -s tests -p "test_*.py" -v
 hemtt check
 hemtt build --no-bin
-python3 -B -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-Legacy `CfgPatches`, function names, virtual PBO prefixes, and release PBO
-filenames are compatibility contracts and must not change in a patch release.
+The `kedr` path and the existing weapon and magazine class names are kept so
+old loadouts continue to work.
 
 ## License
 
-SQF, Arma configuration, and tooling are GPL-2.0-or-later. Original Arma
-models, textures, materials, animations, and audio are APL-SA. See
-[LICENSES.md](LICENSES.md) and closer notices.
+Code and configs use GPL-2.0-or-later. Original models, textures, animations
+and sounds use APL-SA. See [LICENSES.md](LICENSES.md).
